@@ -5,7 +5,7 @@ var AppConfig = function($stateProvider, $urlRouterProvider) {
     .state('app', {
       url: '/app',
       abstract: true,
-      templateUrl: 'templates/menu.html',
+      templateUrl: 'modules/layout/menu.html',
       controller: 'AppCtrl'
     })
 
@@ -13,7 +13,7 @@ var AppConfig = function($stateProvider, $urlRouterProvider) {
       url: '/search',
       views: {
         'menuContent': {
-          templateUrl: 'templates/search.html'
+          templateUrl: 'modules/layout/search.html'
         }
       }
     })
@@ -22,7 +22,7 @@ var AppConfig = function($stateProvider, $urlRouterProvider) {
       url: '/browse',
       views: {
         'menuContent': {
-          templateUrl: 'templates/browse.html'
+          templateUrl: 'modules/layout/browse.html'
         }
       }
     })
@@ -31,7 +31,7 @@ var AppConfig = function($stateProvider, $urlRouterProvider) {
       url: '/playlists',
       views: {
         'menuContent': {
-          templateUrl: 'templates/playlists.html',
+          templateUrl: 'modules/playlists/playlists.html',
           controller: 'PlaylistsCtrl'
         }
       }
@@ -41,7 +41,7 @@ var AppConfig = function($stateProvider, $urlRouterProvider) {
       url: '/playlists/:playlistId',
       views: {
         'menuContent': {
-          templateUrl: 'templates/playlist.html',
+          templateUrl: 'modules/playlists/playlist.html',
           controller: 'PlaylistCtrl'
         }
       }
