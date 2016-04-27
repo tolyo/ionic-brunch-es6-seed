@@ -40565,6 +40565,81 @@ process.chdir = function (dir) {
 process.umask = function() { return 0; };
   })();
 });
+require.register("AppConfig.js", function(exports, require, module) {
+'use strict';
+
+var AppConfig = function AppConfig($stateProvider, $urlRouterProvider) {
+  $stateProvider.state('app', {
+    url: '/app',
+    abstract: true,
+    templateUrl: 'templates/menu.html',
+    controller: 'AppCtrl'
+  }).state('app.search', {
+    url: '/search',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/search.html'
+      }
+    }
+  }).state('app.browse', {
+    url: '/browse',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/browse.html'
+      }
+    }
+  }).state('app.playlists', {
+    url: '/playlists',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/playlists.html',
+        controller: 'PlaylistsCtrl'
+      }
+    }
+  }).state('app.single', {
+    url: '/playlists/:playlistId',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/playlist.html',
+        controller: 'PlaylistCtrl'
+      }
+    }
+  });
+
+  // if none of the above states are matched, use this as the fallback
+  $urlRouterProvider.otherwise('/app/playlists');
+};
+
+AppConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
+
+module.exports = AppConfig;
+
+});
+
+require.register("AppRun.js", function(exports, require, module) {
+'use strict';
+
+var AppRun = function AppRun($ionicPlatform) {
+  $ionicPlatform.ready(function () {
+    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+    // for form inputs)
+    if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
+      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+      cordova.plugins.Keyboard.disableScroll(true);
+    }
+    if (window.StatusBar) {
+      // org.apache.cordova.statusbar required
+      StatusBar.styleDefault();
+    }
+  });
+};
+
+AppRun.$inject = ['$ionicPlatform'];
+
+module.exports = AppRun;
+
+});
+
 require.register("app.js", function(exports, require, module) {
 'use strict';
 
@@ -40592,12 +40667,61 @@ var _ionicAngular = require('./ionic-angular');
 
 var _ionicAngular2 = _interopRequireDefault(_ionicAngular);
 
+var _AppRun = require('./AppRun');
+
+var _AppRun2 = _interopRequireDefault(_AppRun);
+
+var _AppConfig = require('./AppConfig');
+
+var _AppConfig2 = _interopRequireDefault(_AppConfig);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-document.addEventListener('DOMContentLoaded', function () {
-  // do your setup here
-  console.log("We have liftoff");
-});
+_angular2.default.module('app', ['ionic', 'starter.controllers']).run(_AppRun2.default).config(_AppConfig2.default);
+
+_angular2.default.module('starter.controllers', []).controller('AppCtrl', function ($scope, $ionicModal, $timeout) {
+
+  // With the new view caching in Ionic, Controllers are only called
+  // when they are recreated or on app start, instead of every page change.
+  // To listen for when this page is active (for example, to refresh data),
+  // listen for the $ionicView.enter event:
+  //$scope.$on('$ionicView.enter', function(e) {
+  //});
+
+  // Form data for the login modal
+  $scope.loginData = {};
+
+  // Create the login modal that we will use later
+  $ionicModal.fromTemplateUrl('templates/login.html', {
+    scope: $scope
+  }).then(function (modal) {
+    $scope.modal = modal;
+  });
+
+  // Triggered in the login modal to close it
+  $scope.closeLogin = function () {
+    $scope.modal.hide();
+  };
+
+  // Open the login modal
+  $scope.login = function () {
+    $scope.modal.show();
+  };
+
+  // Perform the login action when the user submits the login form
+  $scope.doLogin = function () {
+    console.log('Doing login', $scope.loginData);
+
+    // Simulate a login delay. Remove this and replace with your login
+    // code if using a login system
+    $timeout(function () {
+      $scope.closeLogin();
+    }, 1000);
+  };
+}).controller('PlaylistsCtrl', function ($scope) {
+  $scope.playlists = [{ title: 'Reggae', id: 1 }, { title: 'Chill', id: 2 }, { title: 'Dubstep', id: 3 }, { title: 'Indie', id: 4 }, { title: 'Rap', id: 5 }, { title: 'Cowbell', id: 6 }];
+}).controller('PlaylistCtrl', function ($scope, $stateParams) {});
+
 });
 
 require.register("ionic-angular.js", function(exports, require, module) {
@@ -45079,6 +45203,7 @@ tabsCtrl.select(0);}}}};}]); /**
  * @param {boolean=} hide-nav-bar Whether to hide the parent
  * {@link ionic.directive:ionNavBar} by default.
  */IonicModule.directive('ionView',function(){return {restrict:'EA',priority:1000,controller:'$ionicView',compile:function compile(tElement){tElement.addClass('pane');tElement[0].removeAttribute('title');return function link($scope,$element,$attrs,viewCtrl){viewCtrl.init();};}};});})();
+
 });
 
 require.register("ionic.js", function(exports, require, module) {
@@ -47651,6 +47776,7 @@ e.gesture.srcEvent.preventDefault();ionic.requestAnimationFrame(function(){if(!s
 if(self._dragInfo.initialState){if(px<self.triggerThreshold){self.setOpenPercent(0);}else if(px>self._dragInfo.triggerX){self.setOpenPercent(100);}}else { // The initial state was off, so "tend towards" off
 if(px<self._dragInfo.triggerX){self.setOpenPercent(0);}else if(px>mx){self.setOpenPercent(100);}}});},endDrag:function endDrag(){this._dragInfo=null;},hold:function hold(){this.el.classList.add('dragging');},release:function release(e){this.el.classList.remove('dragging');this.endDrag(e);},setOpenPercent:function setOpenPercent(openPercent){ // only make a change if the new open percent has changed
 if(this.openPercent<0||openPercent<this.openPercent-3||openPercent>this.openPercent+3){this.openPercent=openPercent;if(openPercent===0){this.val(false);}else if(openPercent===100){this.val(true);}else {var openPixel=Math.round(openPercent/100*this.track.offsetWidth-this.handle.offsetWidth);openPixel=openPixel<1?0:openPixel;this.handle.style[ionic.CSS.TRANSFORM]='translate3d('+openPixel+'px,0,0)';}}},val:function val(value){if(value===true||value===false){if(this.handle.style[ionic.CSS.TRANSFORM]!==""){this.handle.style[ionic.CSS.TRANSFORM]="";}this.checkbox.checked=value;this.openPercent=value?100:0;this.onChange&&this.onChange();}return this.checkbox.checked;}});})(ionic);})();
+
 });
 
 require.alias("process/browser.js", "process");
@@ -47751,5 +47877,5 @@ require.alias("angular-ui-router/release/angular-ui-router.js", "angular-ui-rout
   connect();
 })();
 /* jshint ignore:end */
+
 ;
-//# sourceMappingURL=app.js.map
