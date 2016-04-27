@@ -1,6 +1,7 @@
 'use strict';
 
 var PlaylistCtrl = function($scope) {
+  $scope.greet = 'hello'
   $scope.playlists = [
     { title: 'Reggae', id: 1 },
     { title: 'Chill', id: 2 },

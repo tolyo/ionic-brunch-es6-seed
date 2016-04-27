@@ -40588,22 +40588,6 @@ var AppConfig = function AppConfig($stateProvider, $urlRouterProvider) {
         templateUrl: 'modules/layout/browse.html'
       }
     }
-  }).state('app.playlists', {
-    url: '/playlists',
-    views: {
-      'menuContent': {
-        templateUrl: 'modules/playlists/playlists.html',
-        controller: 'PlaylistsCtrl'
-      }
-    }
-  }).state('app.single', {
-    url: '/playlists/:playlistId',
-    views: {
-      'menuContent': {
-        templateUrl: 'modules/playlists/playlist.html',
-        controller: 'PlaylistCtrl'
-      }
-    }
   });
 
   // if none of the above states are matched, use this as the fallback
@@ -47805,6 +47789,7 @@ require.register("modules/playlists/PlaylistCtrl.js", function(exports, require,
 'use strict';
 
 var PlaylistCtrl = function PlaylistCtrl($scope) {
+  $scope.greet = 'hello';
   $scope.playlists = [{ title: 'Reggae', id: 1 }, { title: 'Chill', id: 2 }, { title: 'Dubstep', id: 3 }, { title: 'Indie', id: 4 }, { title: 'Rap', id: 5 }, { title: 'Cowbell', id: 6 }];
 };
 
@@ -47849,7 +47834,25 @@ var _PlaylistsCtrl2 = _interopRequireDefault(_PlaylistsCtrl);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_angular2.default.module('app.playlists', []).controller('PlaylistCtrl', _PlaylistCtrl2.default).controller('PlaylistsCtrl', _PlaylistsCtrl2.default);
+_angular2.default.module('app.playlists', []).config(['$stateProvider', function ($stateProvider) {
+  $stateProvider.state('app.playlists', {
+    url: '/playlists',
+    views: {
+      'menuContent': {
+        templateUrl: 'modules/playlists/playlists.html',
+        controller: 'PlaylistCtrl'
+      }
+    }
+  }).state('app.single', {
+    url: '/playlists/:playlistId',
+    views: {
+      'menuContent': {
+        templateUrl: 'modules/playlists/playlist.html',
+        controller: 'PlaylistsCtrl'
+      }
+    }
+  });
+}]).controller('PlaylistCtrl', _PlaylistCtrl2.default).controller('PlaylistsCtrl', _PlaylistsCtrl2.default);
 
 });
 
