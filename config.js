@@ -16,9 +16,8 @@ module.exports = {
       }
     },
     stylesheets: {
-      defaultExtension: 'scss',
       joinTo: {
-        'css/app.css':           /^app\/app\.scss$/
+        'css/app.css':  /^(app)/
       }
     }
   },
