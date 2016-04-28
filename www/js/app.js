@@ -47789,7 +47789,6 @@ require.register("modules/playlists/PlaylistCtrl.js", function(exports, require,
 'use strict';
 
 var PlaylistCtrl = function PlaylistCtrl($scope) {
-  $scope.greet = 'hello';
   $scope.playlists = [{ title: 'Reggae', id: 1 }, { title: 'Chill', id: 2 }, { title: 'Dubstep', id: 3 }, { title: 'Indie', id: 4 }, { title: 'Rap', id: 5 }, { title: 'Cowbell', id: 6 }];
 };
 
@@ -47799,7 +47798,7 @@ module.exports = PlaylistCtrl;
 
 });
 
-require.register("modules/playlists/PlaylistsCtrl.js", function(exports, require, module) {
+require.register("modules/playlists/PlaylistItemCtrl.js", function(exports, require, module) {
 'use strict';
 
 var _angular = require('angular');
@@ -47809,11 +47808,11 @@ var _angular2 = _interopRequireDefault(_angular);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 'use strict';
-var PlaylistCtrl = function PlaylistCtrl($scope, $stateParams) {};
+var PlaylistItemCtrl = function PlaylistItemCtrl($scope, $stateParams) {};
 
-PlaylistCtrl.$inject = ['$scope', '$stateParams'];
+PlaylistItemCtrl.$inject = ['$scope', '$stateParams'];
 
-module.exports = PlaylistCtrl;
+module.exports = PlaylistItemCtrl;
 
 });
 
@@ -47828,13 +47827,13 @@ var _PlaylistCtrl = require('./PlaylistCtrl');
 
 var _PlaylistCtrl2 = _interopRequireDefault(_PlaylistCtrl);
 
-var _PlaylistsCtrl = require('./PlaylistsCtrl');
+var _PlaylistItemCtrl = require('./PlaylistItemCtrl');
 
-var _PlaylistsCtrl2 = _interopRequireDefault(_PlaylistsCtrl);
+var _PlaylistItemCtrl2 = _interopRequireDefault(_PlaylistItemCtrl);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_angular2.default.module('app.playlists', []).config(['$stateProvider', function ($stateProvider) {
+_angular2.default.module('app.playlists', ['ui.router']).config(['$stateProvider', function ($stateProvider) {
   $stateProvider.state('app.playlists', {
     url: '/playlists',
     views: {
@@ -47847,12 +47846,12 @@ _angular2.default.module('app.playlists', []).config(['$stateProvider', function
     url: '/playlists/:playlistId',
     views: {
       'menuContent': {
-        templateUrl: 'modules/playlists/playlist.html',
-        controller: 'PlaylistsCtrl'
+        templateUrl: 'modules/playlists/playlistItem.html',
+        controller: 'PlaylistItemCtrl'
       }
     }
   });
-}]).controller('PlaylistCtrl', _PlaylistCtrl2.default).controller('PlaylistsCtrl', _PlaylistsCtrl2.default);
+}]).controller('PlaylistCtrl', _PlaylistCtrl2.default).controller('PlaylistItemCtrl', _PlaylistItemCtrl2.default);
 
 });
 

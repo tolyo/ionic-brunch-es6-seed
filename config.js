@@ -1,5 +1,10 @@
 module.exports = {
 
+  conventions: {
+    assets:   /^(app)(\\|\/)(assets)/,
+    ignored:  [/\/_/, /\.(spec|scenario)\.(js$)/]
+  },
+
   modules: {
     definition:   'commonjs',
     wrapper:      'commonjs'

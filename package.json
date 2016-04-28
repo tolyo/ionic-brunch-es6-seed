@@ -1,8 +1,8 @@
 {
   "name": "ionic-brunch-es6-seed",
   "author": "Your Name",
-  "version": "0.0.1",
-  "description": "ionic-brunch-es6-seed: An Ionic project with Brunch and Babel for ES6",
+  "version": "0.0.2",
+  "description": "An Ionic starter project with Babel and Brunch",
   "repository": {
     "type": "git",
     "url": ""
@@ -44,5 +44,18 @@
     "cordova-plugin-statusbar",
     "ionic-plugin-keyboard"
   ],
-  "cordovaPlatforms": []
+  "cordovaPlatforms": [],
+  "keywords": [
+    "babel",
+    "brunch",
+    "ionic",
+    "ionic framework",
+    "ionicframework",
+    "mobile",
+    "es6",
+    "app",
+    "hybrid",
+    "cordova",
+    "phonegap"
+  ]
 }

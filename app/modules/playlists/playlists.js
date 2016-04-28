@@ -2,9 +2,11 @@
 
 import angular from 'angular';
 import PlaylistCtrl from './PlaylistCtrl';
-import PlaylistsCtrl from './PlaylistsCtrl';
+import PlaylistItemCtrl from './PlaylistItemCtrl';
 
-angular.module('app.playlists', [])
+angular.module('app.playlists', [
+  'ui.router'
+])
 .config(['$stateProvider', function($stateProvider) {
   $stateProvider
     .state('app.playlists', {
@@ -20,12 +22,12 @@ angular.module('app.playlists', [])
       url: '/playlists/:playlistId',
       views: {
         'menuContent': {
-          templateUrl: 'modules/playlists/playlist.html',
-          controller: 'PlaylistsCtrl'
+          templateUrl: 'modules/playlists/playlistItem.html',
+          controller: 'PlaylistItemCtrl'
         }
       }
     })
   }
 ])
 .controller('PlaylistCtrl', PlaylistCtrl)
-.controller('PlaylistsCtrl', PlaylistsCtrl);
+.controller('PlaylistItemCtrl', PlaylistItemCtrl);
