@@ -7,7 +7,7 @@ describe('playlists module', function() {
   describe('PlaylistCtrl', function() {
 
     it('should make lists available to the scope',
-      inject(function($controller, $rootScope, $state) {
+      inject(function($controller, $rootScope) {
         var scope;
         scope = $rootScope.$new();
         var ctrl = $controller('PlaylistCtrl', {
