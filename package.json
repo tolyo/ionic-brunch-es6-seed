@@ -1,12 +1,12 @@
 {
   "name": "ionic-brunch-es6-seed",
   "author": "Your Name",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "homepage": "https://github.com/tolyo/ionic-brunch-es6-seed",
   "description": "An Ionic starter project with Babel and Brunch",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git@github.com:tolyo/ionic-brunch-es6-seed.git"
   },
   "scripts": {
     "start": "brunch watch --server",
