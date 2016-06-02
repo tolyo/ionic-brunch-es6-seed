@@ -1,7 +1,8 @@
 {
   "name": "ionic-brunch-es6-seed",
   "author": "Your Name",
-  "version": "0.0.4",
+  "version": "0.0.5",
+  "license": "MIT",
   "homepage": "https://github.com/tolyo/ionic-brunch-es6-seed",
   "description": "An Ionic starter project with Babel and Brunch",
   "repository": {
@@ -28,7 +29,7 @@
     "brunch": "^2.4.0",
     "clean-css-brunch": "^2.0.0",
     "css-brunch": "^2.0.0",
-    "html-pages-brunch": ">= 1.0",
+    "html-pages-brunch": "^2.0.0",
     "http-proxy": "^1.11.1",
     "javascript-brunch": "^2.0.0",
     "karma": "~0.12.23",

@@ -46,10 +46,14 @@ module.exports = {
     babel: {
       presets: ["es2015"],
       pattern: /\.(es6|js)$/
+    },
+    htmlPages: {
+      htmlMin: {
+        removeRedundantAttributes: false
+      }
     }
   },
 
   sourceMaps: false,
-  optimize:   false
-
+  optimize:   true
 };

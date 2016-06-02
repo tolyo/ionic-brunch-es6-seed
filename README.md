@@ -3,7 +3,8 @@
 This is a starter project for a mobile application based on [Ionic framework](http://ionicframework.com/), [Babel](https://babeljs.io/) 
 and [Brunch](http://brunch.io). 
 You can use it to quickly bootstrap your app on a modern language platform, while enjoying smooth development 
-experience and compile time safety across your entire stack of static resources.
+experience and compile time safety across your entire stack of static resources. 
+Sample code includes a port to ES6 of [ionic-starter-sidemenu](https://github.com/driftyco/ionic-starter-sidemenu)
 
 ### Features:
 * ES6 by default
@@ -14,7 +15,7 @@ experience and compile time safety across your entire stack of static resources.
 
 ### Get started
 
-* `git clone git@github.com:tolyo/ionic-brunch-es6-seed.git` or `npm i ionic-brunch-es6-seed`
+* `git clone git@github.com:tolyo/ionic-brunch-es6-seed.git`
 * `cd ionic-brunch-es6-seed`
 * `npm install`
 

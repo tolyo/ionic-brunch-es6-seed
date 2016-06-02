@@ -11,7 +11,7 @@ const AppCtrl = ($scope, $ionicModal, $timeout) => {
   $scope.loginData = {};
 
   // Create the login modal that we will use later
-  $ionicModal.fromTemplateUrl('templates/login.html', {
+  $ionicModal.fromTemplateUrl('modules/layout/login.html', {
     scope: $scope
   }).then(modal => {
     $scope.modal = modal;
