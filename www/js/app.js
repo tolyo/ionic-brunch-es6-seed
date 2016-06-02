@@ -40568,6 +40568,10 @@ process.umask = function() { return 0; };
 require.register("AppConfig.js", function(exports, require, module) {
 'use strict';
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
 var AppConfig = function AppConfig($stateProvider, $urlRouterProvider) {
   $stateProvider.state('app', {
     url: '/app',
@@ -40596,13 +40600,16 @@ var AppConfig = function AppConfig($stateProvider, $urlRouterProvider) {
 
 AppConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
 
-module.exports = AppConfig;
+exports.default = AppConfig;
 
 });
 
 require.register("AppCtrl.js", function(exports, require, module) {
 'use strict';
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 var AppCtrl = function AppCtrl($scope, $ionicModal, $timeout) {
 
   // With the new view caching in Ionic, Controllers are only called
@@ -40646,13 +40653,16 @@ var AppCtrl = function AppCtrl($scope, $ionicModal, $timeout) {
 
 AppCtrl.$inject = ['$scope', '$ionicModal', '$timeout'];
 
-module.exports = AppCtrl;
+exports.default = AppCtrl;
 
 });
 
 require.register("AppRun.js", function(exports, require, module) {
 'use strict';
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 var AppRun = function AppRun($ionicPlatform) {
   $ionicPlatform.ready(function () {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -40670,7 +40680,7 @@ var AppRun = function AppRun($ionicPlatform) {
 
 AppRun.$inject = ['$ionicPlatform'];
 
-module.exports = AppRun;
+exports.default = AppRun;
 
 });
 
@@ -40719,7 +40729,6 @@ var _playlists2 = _interopRequireDefault(_playlists);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-'use strict';
 _angular2.default.module('app', [
 
 // Third party
@@ -47788,18 +47797,25 @@ if(this.openPercent<0||openPercent<this.openPercent-3||openPercent>this.openPerc
 require.register("modules/playlists/PlaylistCtrl.js", function(exports, require, module) {
 'use strict';
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 var PlaylistCtrl = function PlaylistCtrl($scope) {
   $scope.playlists = [{ title: 'Reggae', id: 1 }, { title: 'Chill', id: 2 }, { title: 'Dubstep', id: 3 }, { title: 'Indie', id: 4 }, { title: 'Rap', id: 5 }, { title: 'Cowbell', id: 6 }];
 };
 
 PlaylistCtrl.$inject = ['$scope'];
 
-module.exports = PlaylistCtrl;
+exports.default = PlaylistCtrl;
 
 });
 
 require.register("modules/playlists/PlaylistItemCtrl.js", function(exports, require, module) {
 'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
 
 var _angular = require('angular');
 
@@ -47807,12 +47823,11 @@ var _angular2 = _interopRequireDefault(_angular);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-'use strict';
 var PlaylistItemCtrl = function PlaylistItemCtrl($scope, $stateParams) {};
 
 PlaylistItemCtrl.$inject = ['$scope', '$stateParams'];
 
-module.exports = PlaylistItemCtrl;
+exports.default = PlaylistItemCtrl;
 
 });
 

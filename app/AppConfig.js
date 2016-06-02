@@ -1,5 +1,5 @@
 
-var AppConfig = function($stateProvider, $urlRouterProvider) {
+const AppConfig = ($stateProvider, $urlRouterProvider) => {
   $stateProvider
 
     .state('app', {
@@ -36,6 +36,6 @@ AppConfig.$inject = [
   '$urlRouterProvider'
 ];
 
-module.exports = AppConfig;
+export default AppConfig;
 
 

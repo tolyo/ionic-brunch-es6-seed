@@ -10,7 +10,6 @@ import AppConfig from './AppConfig';
 import AppCtrl from './AppCtrl';
 import playlists from './modules/playlists/playlists';
 
-'use strict';
 angular.module('app', [
 
   // Third party

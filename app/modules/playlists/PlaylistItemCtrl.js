@@ -1,7 +1,6 @@
 import angular from 'angular';
 
-'use strict';
-var PlaylistItemCtrl = function($scope, $stateParams) {
+const PlaylistItemCtrl = ($scope, $stateParams) => {
 };
 
 PlaylistItemCtrl.$inject = [
@@ -9,5 +8,5 @@ PlaylistItemCtrl.$inject = [
   '$stateParams'
 ];
 
-module.exports = PlaylistItemCtrl;
+export default PlaylistItemCtrl;
 

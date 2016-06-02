@@ -1,5 +1,4 @@
-'use strict';
-var AppCtrl = function($scope, $ionicModal, $timeout) {
+const AppCtrl = ($scope, $ionicModal, $timeout) => {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -14,37 +13,36 @@ var AppCtrl = function($scope, $ionicModal, $timeout) {
   // Create the login modal that we will use later
   $ionicModal.fromTemplateUrl('templates/login.html', {
     scope: $scope
-  }).then(function(modal) {
+  }).then(modal => {
     $scope.modal = modal;
   });
 
   // Triggered in the login modal to close it
-  $scope.closeLogin = function() {
+  $scope.closeLogin = () => {
     $scope.modal.hide();
   };
 
   // Open the login modal
-  $scope.login = function() {
+  $scope.login = () => {
     $scope.modal.show();
   };
 
   // Perform the login action when the user submits the login form
-  $scope.doLogin = function() {
+  $scope.doLogin = () => {
     console.log('Doing login', $scope.loginData);
 
     // Simulate a login delay. Remove this and replace with your login
     // code if using a login system
-    $timeout(function() {
+    $timeout(() => {
       $scope.closeLogin();
     }, 1000);
   };
 };
 
 AppCtrl.$inject = [
-
   '$scope',
   '$ionicModal',
   '$timeout'
 ];
 
-module.exports = AppCtrl;
+export default AppCtrl;

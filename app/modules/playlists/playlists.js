@@ -1,5 +1,3 @@
-'use strict';
-
 import angular from 'angular';
 import PlaylistCtrl from './PlaylistCtrl';
 import PlaylistItemCtrl from './PlaylistItemCtrl';
@@ -7,7 +5,7 @@ import PlaylistItemCtrl from './PlaylistItemCtrl';
 angular.module('app.playlists', [
   'ui.router'
 ])
-.config(['$stateProvider', function($stateProvider) {
+.config(['$stateProvider', $stateProvider => {
   $stateProvider
     .state('app.playlists', {
       url: '/playlists',

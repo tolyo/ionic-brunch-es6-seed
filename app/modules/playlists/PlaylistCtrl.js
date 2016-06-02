@@ -1,6 +1,4 @@
-'use strict';
-
-var PlaylistCtrl = function($scope) {
+const PlaylistCtrl = $scope => {
   $scope.playlists = [
     { title: 'Reggae', id: 1 },
     { title: 'Chill', id: 2 },
@@ -15,4 +13,4 @@ PlaylistCtrl.$inject = [
   '$scope'
 ];
 
-module.exports = PlaylistCtrl;
+export default PlaylistCtrl;
