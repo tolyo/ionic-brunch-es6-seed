@@ -1,7 +1,7 @@
 {
   "name": "ionic-brunch-es6-seed",
   "author": "Your Name",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "license": "MIT",
   "homepage": "https://github.com/tolyo/ionic-brunch-es6-seed",
   "description": "An Ionic starter project with Babel and Brunch",
@@ -10,7 +10,8 @@
     "url": "git@github.com:tolyo/ionic-brunch-es6-seed.git"
   },
   "scripts": {
-    "start": "brunch watch --server",
+    "mobile": "brunch watch --server",
+    "desktop": "electron ./www & brunch watch",
     "prod": "brunch build --production",
     "test": "./node_modules/karma/bin/karma start"
   },
@@ -18,7 +19,8 @@
     "angular": "^1.5.3",
     "angular-animate": "^1.5.3",
     "angular-sanitize": "^1.5.3",
-    "angular-ui-router": "^0.2.18"
+    "angular-ui-router": "^0.2.18",
+    "electron-debug": "^0.5.0"
   },
   "devDependencies": {
     "angular-mocks": "^1.5.3",
@@ -29,6 +31,8 @@
     "brunch": "^2.4.0",
     "clean-css-brunch": "^2.0.0",
     "css-brunch": "^2.0.0",
+    "electron-packager": "^5.0.0",
+    "electron-prebuilt": "^0.36.0",
     "html-pages-brunch": "^2.0.0",
     "http-proxy": "^1.11.1",
     "javascript-brunch": "^2.0.0",
@@ -37,7 +41,9 @@
     "karma-jasmine": "~0.1.5",
     "sass-brunch": "^1.8.10",
     "shelljs": "^0.3.0",
-    "uglify-js-brunch": "^2.0.0"
+    "uglify-js-brunch": "^2.0.0",
+    "require": "^2.4.20",
+    "xo": "^0.12.0"
   },
   "cordovaPlugins": [
     "cordova-plugin-device",
@@ -59,6 +65,8 @@
     "app",
     "hybrid",
     "cordova",
-    "phonegap"
+    "phonegap",
+    "electron",
+    "desktop"
   ]
 }

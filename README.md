@@ -1,7 +1,7 @@
 # ionic-brunch-es6-seed
 
-This is a starter project for a mobile application based on [Ionic framework](http://ionicframework.com/), [Babel](https://babeljs.io/) 
-and [Brunch](http://brunch.io). 
+This is a starter project for a mobile/desktop application based on [Ionic framework](http://ionicframework.com/), [Babel](https://babeljs.io/) and
+[Brunch](http://brunch.io). [Electron](http://electron.atom.io/) is provided as an optional runtime for a desktop app. 
 You can use it to quickly bootstrap your app on a modern language platform, while enjoying smooth development 
 experience and compile time safety across your entire stack of static resources. 
 Sample code includes a port to ES6 of [ionic-starter-sidemenu](https://github.com/driftyco/ionic-starter-sidemenu)
@@ -12,6 +12,7 @@ Sample code includes a port to ES6 of [ionic-starter-sidemenu](https://github.co
 * Run unit tests on save
 * Modular folder-by-feature architecture
 * Javascript/CSS/HTML minification for production
+* Mobile or desktop runtimes
 
 ### Get started
 
@@ -21,7 +22,8 @@ Sample code includes a port to ES6 of [ionic-starter-sidemenu](https://github.co
 
 ### Running the app during development
 
-* `npm start` to serve using **Brunch**
+* `npm start mobile` to serve using **Brunch**
+* `npm start desktop` to serve using **Electron**
 
 ### Running the app in production
 

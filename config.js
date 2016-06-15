@@ -55,5 +55,5 @@ module.exports = {
   },
 
   sourceMaps: false,
-  optimize:   true
+  optimize:   false
 };
