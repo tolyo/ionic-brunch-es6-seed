@@ -24,8 +24,7 @@ angular.module('app.playlists', [
           controller: 'PlaylistItemCtrl'
         }
       }
-    })
-  }
-])
+    });
+}])
 .controller('PlaylistCtrl', PlaylistCtrl)
 .controller('PlaylistItemCtrl', PlaylistItemCtrl);

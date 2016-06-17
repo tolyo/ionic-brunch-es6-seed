@@ -1,14 +1,16 @@
-import angular from 'angular';
-import angularAnimate from 'angular-animate';
-import angularSanitize from 'angular-sanitize';
-import angularUiRouter from 'angular-ui-router';
-import ionic from './ionic';
-import ionicAngular from './ionic-angular';
+import 'angular';
+import 'angular-animate';
+import 'angular-sanitize';
+import 'angular-ui-router';
+import './ionic';
+import './ionic-angular';
 
+import angular from 'angular';
 import AppRun from './AppRun';
 import AppConfig from './AppConfig';
 import AppCtrl from './AppCtrl';
-import playlists from './modules/playlists/playlists';
+
+import './modules/playlists/playlists';
 
 angular.module('app', [
 

@@ -1,10 +1,5 @@
-const PlaylistItemCtrl = ($scope, $stateParams) => {
+const PlaylistItemCtrl = () => {
 };
-
-PlaylistItemCtrl.$inject = [
-  '$scope',
-  '$stateParams'
-];
 
 export default PlaylistItemCtrl;
 

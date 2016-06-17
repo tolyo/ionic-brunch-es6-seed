@@ -47,6 +47,10 @@ module.exports = {
       presets: ["es2015"],
       pattern: /\.(es6|js)$/
     },
+    eslint: {
+      pattern: /^(app)\/(?!ionic).*\.js?$/,
+      warnOnly: true
+    },
     htmlPages: {
       htmlMin: {
         removeRedundantAttributes: false
@@ -55,5 +59,5 @@ module.exports = {
   },
 
   sourceMaps: false,
-  optimize:   false
+  optimize:   true
 };
