@@ -1,11 +1,10 @@
-import 'angular';
+import angular from 'angular';
 import 'angular-animate';
 import 'angular-sanitize';
 import 'angular-ui-router';
 import './ionic';
 import './ionic-angular';
 
-import angular from 'angular';
 import AppRun from './AppRun';
 import AppConfig from './AppConfig';
 import AppCtrl from './AppCtrl';
