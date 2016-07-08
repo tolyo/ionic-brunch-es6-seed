@@ -1,5 +1,3 @@
-const PlaylistItemCtrl = () => {
-};
+export default class PlaylistItemCtrl {
 
-export default PlaylistItemCtrl;
-
+}
