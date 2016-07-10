@@ -22,8 +22,8 @@ Sample code includes a port to ES6 of [ionic-starter-sidemenu](https://github.co
 
 ### Running the app during development
 
-* `npm start mobile` to serve using **Brunch**
-* `npm start desktop` to serve using **Electron**
+* `npm run mobile` to serve using **Brunch**
+* `npm run desktop` to serve using **Electron**
 
 ### Running the app in production
 
