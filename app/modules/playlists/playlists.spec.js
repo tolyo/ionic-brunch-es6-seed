@@ -1,16 +1,13 @@
-'use strict';
-
 beforeEach(module('app.playlists'));
 
-describe('playlists module', function() {
+describe('playlists module', () => {
 
-  describe('PlaylistCtrl', function() {
+  describe('PlaylistCtrl', () => {
 
     it('should make lists available to the scope',
-      inject(function($controller, $rootScope) {
-        var scope;
-        scope = $rootScope.$new();
-        var ctrl = $controller('PlaylistCtrl', {
+      inject(($controller, $rootScope) => {
+        let scope = $rootScope.$new();
+        const ctrl = $controller('PlaylistCtrl', {
           $scope: scope
         });
         expect(ctrl).toBeDefined();
