@@ -1,3 +1,5 @@
+const DELAY = 1000;
+
 class AppCtrl {
 
   constructor($scope, $ionicModal, $timeout) {
@@ -36,9 +38,9 @@ class AppCtrl {
       // code if using a login system
       $timeout(() => {
         $scope.closeLogin();
-      }, 1000);
+      }, DELAY);
     };
-  };
+  }
 }
 
 AppCtrl.$inject = [
