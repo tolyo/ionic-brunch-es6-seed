@@ -27,7 +27,7 @@ Sample code includes a port to ES6 of [ionic-starter-sidemenu](https://github.co
 
 ### Running the app in production
 
-* `npm prod` to build for production deployment
+* `npm run prod` to build for production deployment
 
 ### Running unit tests
 
