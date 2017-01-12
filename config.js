@@ -56,8 +56,5 @@ module.exports = {
         removeRedundantAttributes: false
       }
     }
-  },
-
-  sourceMaps: false,
-  optimize:   true
+  }
 };
