@@ -36,7 +36,7 @@
     "eslint": "^2.12.0",
     "eslint-brunch": "^3.6.0",
     "html-pages-brunch": "^2.0.0",
-    "jasmine":"^2.5.3",
+    "jasmine": "^2.5.3",
     "javascript-brunch": "^2.0.0",
     "karma": "^1.4.1",
     "karma-babel-preprocessor": "^6.0.0",
