@@ -9,7 +9,7 @@ import AppRun from './AppRun';
 import AppConfig from './AppConfig';
 import AppCtrl from './AppCtrl';
 
-import './modules/playlists/playlists';
+import './modules/playlists/playlists.js';
 
 angular.module('app', [
 
